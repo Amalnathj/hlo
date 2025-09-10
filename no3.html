@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ask Her Out 💕</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .btn {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      position: relative;
+    }
+    #move-random {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-500 to-rose-600">
+  <div class="bg-white rounded-2xl shadow-2xl p-8 text-center max-w-md relative">
+    <!-- Tenor GIF -->
+    <div class="tenor-gif-embed mb-4" data-postid="15974530976611222074" data-share-method="host"
+      data-aspect-ratio="1.26923" data-width="100%">
+      <a href="https://tenor.com/view/peach-goma-phone-gif-15974530976611222074">Peach Goma Phone Sticker</a>from
+      <a href="https://tenor.com/search/peach+goma-stickers">Peach Goma Stickers</a>
+    </div>
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+    <!-- Text -->
+    <h1 class="text-2xl font-bold text-pink-600 mb-3">
+      Come on baby… don’t test me anymore, just agree already 😭
+    </h1>
+    <p class="text-gray-700 mb-6">That’s really wrong 😭</p>
+
+    <!-- Buttons -->
+    <div class="btn">
+      <a href="yes.html"
+        class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full shadow-lg transition">Yes ✅</a>
+      <a href="#" id="move-random"
+        class="bg-red-500 text-white px-6 py-2 rounded-full shadow-lg transition">No ❌</a>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("move-random");
+
+    noBtn.addEventListener("mouseover", () => {
+      const container = document.querySelector(".container") || document.body;
+      const maxX = 200; // how far button can move
+      const maxY = 150;
+
+      const x = Math.floor(Math.random() * maxX) - maxX / 2;
+      const y = Math.floor(Math.random() * maxY) - maxY / 2;
+
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+</body>
+</html>

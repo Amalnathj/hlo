@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ask Her Out 💕</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-500 to-pink-500">
+  <div class="bg-white rounded-2xl shadow-2xl p-8 text-center max-w-md">
+    <!-- GIF -->
+    <div class="tenor-gif-embed mb-4" data-postid="22050818" data-share-method="host" data-aspect-ratio="1"
+      data-width="100%">
+      <a href="https://tenor.com/view/mochi-gif-22050818">Mochi Sticker</a>from
+      <a href="https://tenor.com/search/mochi-stickers">Mochi Stickers</a>
+    </div>
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+    <!-- Text -->
+    <h1 class="text-3xl font-bold text-pink-600 mb-2">Please think again! 🙄</h1>
+    <p class="text-gray-700 mb-6">Don’t say no so fast 😥</p>
+
+    <!-- Buttons -->
+    <div class="flex justify-center gap-6">
+      <a href="yes.html"
+        class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full shadow-lg transition">Yes ✅</a>
+      <a id="noBtn"
+        href="no2.html"
+        class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full shadow-lg transition">No ❌</a>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    // Make the "No" button shake when clicked (funny effect)
+    noBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      noBtn.classList.add("animate-bounce");
+      setTimeout(() => {
+        window.location.href = "no2.html";
+      }, 1000); // redirect after animation
+    });
+  </script>
+</body>
+
+</html>
