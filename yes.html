@@ -3,51 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proposed Her 💘</title>
+  <title>She Said Yes! 💘</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .runaway {
-      position: relative;
-      transition: transform 0.1s ease; /* faster movement */
-    }
-  </style>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-500 to-purple-600">
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-400 via-rose-400 to-purple-500">
   
-  <div class="bg-white rounded-2xl shadow-2xl p-8 text-center relative max-w-md">
-    <!-- GIF -->
-    <div class="tenor-gif-embed mb-4" data-postid="22885016" data-share-method="host" data-aspect-ratio="1.04918" data-width="100%">
-      <a href="https://tenor.com/view/manja-gif-22885016">Manja Sticker</a>from 
-      <a href="https://tenor.com/search/manja-stickers">Manja Stickers</a>
+  <div class="bg-white rounded-3xl shadow-2xl p-8 text-center max-w-lg">
+    <!-- Love GIF -->
+    <div class="tenor-gif-embed mb-4" data-postid="16314154" data-share-method="host" data-aspect-ratio="1.26923" data-width="100%">
+      <a href="https://tenor.com/view/love-couple-gif-16314154">Love Couple GIF</a> from 
+      <a href="https://tenor.com/search/love-gifs">Love GIFs</a>
     </div>
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-    
-    <!-- Text -->
-    <h1 class="text-3xl font-bold text-pink-600 mb-2">Do you love me? 🤗</h1>
-    <p class="text-gray-700 mb-6">I am all yours 💕</p>
+
+    <!-- Romantic Text -->
+    <h1 class="text-4xl font-extrabold text-pink-600 mb-4">I knew it! ❤️</h1>
+    <p class="text-lg text-gray-700 mb-6">You love me too… Now our story really begins ✨💑</p>
 
     <!-- Buttons -->
-    <div class="flex justify-center gap-6 relative">
-      <a href="yes.html" 
-         class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full shadow-lg transition">
-         Yes ✅
+    <div class="flex justify-center gap-4">
+      <a href="index.html" class="bg-pink-500 text-white px-5 py-2 rounded-full shadow hover:bg-pink-600 transition">
+        Back Home 🏠
       </a>
-      <a id="noBtn"
-         href="no1.html" 
-         class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full shadow-lg transition runaway">
-         No ❌
-      </a>
+      <button onclick="celebrate()" class="bg-green-500 text-white px-5 py-2 rounded-full shadow hover:bg-green-600 transition">
+        Celebrate 🎉
+      </button>
     </div>
   </div>
 
-  <script>
-    const noBtn = document.getElementById("noBtn");
+  <!-- Celebration hearts -->
+  <div id="hearts-container" class="absolute inset-0 pointer-events-none"></div>
 
-    noBtn.addEventListener("mouseover", () => {
-      const x = Math.floor(Math.random() * 400) - 200; // wider range
-      const y = Math.floor(Math.random() * 400) - 200;
-      noBtn.style.transform = `translate(${x}px, ${y}px)`;
-    });
+  <script>
+    function celebrate() {
+      const container = document.getElementById("hearts-container");
+      for (let i = 0; i < 15; i++) {
+        const heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.style.position = "absolute";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = "100vh";
+        heart.style.fontSize = Math.random() * 30 + 20 + "px";
+        heart.style.animation = `floatUp ${2 + Math.random() * 3}s linear`;
+        container.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 4000);
+      }
+    }
+
+    // Floating hearts animation
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @keyframes floatUp {
+        from { transform: translateY(0); opacity: 1; }
+        to { transform: translateY(-110vh); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
   </script>
 
 </body>
